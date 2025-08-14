@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "experiment": "onb_v1",
+  "slides": [
+    {
+      "key": "intro",
+      "title": "🔊 ابدأ رحلة التغيير الآن",
+      "subtitle": "مع Sublimind، أعد برمجة عقلك الباطن لتعيش أفضل نسخة منك.",
+      "illustrationUrl": "https://cdn.jsdelivr.net/gh/ton-user/ton-repo/content/onboarding/v1/images/intro.webp"
+    },
+    {
+      "key": "benefit1",
+      "title": "ثقة بلا حدود",
+      "subtitle": "جلسات صوتية تعزز حضورك وقوتك الداخلية يومًا بعد يوم.",
+      "illustrationUrl": "https://cdn.jsdelivr.net/gh/ton-user/ton-repo/content/onboarding/v1/images/benefit1.webp"
+    },
+    {
+      "key": "Consent",
+      "title": "لنصنع تجربتك المثالية",
+      "subtitle": "📊 اسمح لنا بجمع بيانات الاستخدام (بدون معلومات شخصية) لنمنحك توصيات دقيقة.",
+      "illustrationUrl": "https://cdn.jsdelivr.net/gh/ton-user/ton-repo/content/onboarding/v1/images/pro.webp",
+      "analyticsConsent": true
+    },
+    {
+      "key": "pro",
+      "title": "افتح كل المزايا الآن",
+      "subtitle": "مكتبة كاملة، أصوات حصرية، وإنشاء جلسات بلا حدود.",
+      "illustrationUrl": "https://cdn.jsdelivr.net/gh/ton-user/ton-repo/content/onboarding/v1/images/pro.webp",
+      "proCta": true
+    }
+  ]
+}
