@@ -1,0 +1,188 @@
+
+/* === Base Theme Variables === */
+:root {
+  --bg-primary: #0F1115;
+  --bg-secondary: #1B1E24;
+  --bg-tertiary: #20232A;
+  --text-primary: #EDEDED;
+  --text-secondary: #999999;
+  --text-inverted: #0F1115;
+  --primary-500: #A78BFA;
+  --primary-700: #876CDB;
+  --primary-300: #BFA6FB;
+  --accent-500: #00C1A2;
+  --accent-700: #009B82;
+  --premium: #D6BB6D;
+  --success: #4CAF50;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --info: #3B82F6;
+  --outline: #2A2A33;
+  --separator: #2F3138;
+  --placeholder: #707070;
+  --disabled-bg: #1C1E24;
+  --disabled-text: #7B7E86;
+  --disabled-border: #2A2C33;
+  --surface-hover: #17171D;
+  --surface-press: #14141A;
+}
+
+/* === Reset / base === */
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(167,139,250,0.08), transparent 60%),
+              radial-gradient(1000px 700px at 120% 10%, rgba(0,193,162,0.06), transparent 60%),
+              var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Poppins", "Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--primary-300); text-decoration: none; }
+a:hover { color: var(--primary-500); text-decoration: underline; }
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(1.2) blur(8px);
+  background: color-mix(in oklab, var(--bg-primary) 88%, transparent);
+  border-bottom: 1px solid var(--separator);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.brand-badge {
+  width: 10px; height: 10px; border-radius: 3px; background: var(--accent-500);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent-500) 28%, transparent);
+}
+.nav a {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.nav a:hover { color: var(--text-primary); background: var(--surface-hover); border-color: var(--outline); }
+
+.page-title {
+  font-family: "Noto Naskh Arabic", "Poppins", "Tajawal", serif;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  margin: 24px 0 8px;
+}
+.subtle { color: var(--text-secondary); font-size: 14px; }
+
+.toc {
+  margin: 24px 0 32px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--outline);
+  border-radius: 14px;
+}
+.toc h2 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+.toc ul { list-style: none; padding: 0; margin: 0; }
+.toc li a { display: inline-block; padding: 6px 0; }
+
+.section {
+  padding: 20px 0;
+  border-top: 1px solid var(--separator);
+}
+
+.callout {
+  margin: 24px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px dashed var(--outline);
+  background: linear-gradient(0deg, color-mix(in oklab, var(--bg-secondary) 96%, transparent), color-mix(in oklab, var(--bg-secondary) 96%, transparent));
+}
+
+.footer {
+  border-top: 1px solid var(--separator);
+  color: var(--text-secondary);
+  font-size: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+/* Buttons (for FAQ controls, links, etc.) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--outline);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.btn:hover { background: var(--surface-hover); }
+.btn:active { background: var(--surface-press); }
+
+/* Accessible accordion via <details> */
+details.accordion {
+  border: 1px solid var(--outline);
+  background: var(--bg-secondary);
+  border-radius: 14px;
+  padding: 8px 12px;
+  margin: 12px 0;
+}
+details.accordion[open] { border-color: var(--primary-700); box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary-700) 16%, transparent); }
+details.accordion > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 4px;
+  font-weight: 600;
+}
+details.accordion > summary::marker { display: none; }
+details.accordion > summary .chev { transition: transform .2s ease; }
+details.accordion[open] > summary .chev { transform: rotate(180deg); }
+.accordion-content {
+  color: var(--text-secondary);
+  padding: 8px 2px 12px 2px;
+  border-top: 1px dashed var(--outline);
+  margin-top: 6px;
+}
+
+/* Legal text best practices: readable width, spacing, clear lists */
+.legal p { margin: 10px 0; }
+.legal ul { padding-left: 18px; }
+.legal li { margin: 6px 0; }
+small.code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; color: var(--text-secondary); }
+
+/* RTL support */
+[dir="rtl"] .toc ul { padding-right: 0; }
+[dir="rtl"] details.accordion > summary { flex-direction: row-reverse; }
+[dir="rtl"] .chev { transform: rotate(180deg); }
