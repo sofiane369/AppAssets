@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" dir="auto">
+<head>
+  <title>Delete Account — Acme App</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How to permanently delete your Acme App account and associated data." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Naskh+Arabic:wght@700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+
+  <main class="container legal" id="content">
+    <h1 class="page-title">Delete Account</h1>
+
+    <p>You can delete your account and all associated data directly from the Settings section in the app when you are logged in.</p>
+
+    <section class="section" aria-labelledby="steps">
+      <h2 id="steps">To delete your account:</h2>
+      <ol>
+        <li>Open the app and go to <strong>Settings → Account → Delete Account</strong>.</li>
+        <li>Confirm your choice.</li>
+      </ol>
+      <p>Your account and associated data (such as profile information and preferences) will be permanently deleted from our servers.</p>
+    </section>
+
+    <section class="section" aria-labelledby="support">
+      <h2 id="support">Need help?</h2>
+      <p>If you experience any issues or would like to request deletion by email, you can contact us at
+        <a href="mailto:support@example.com">support@example.com</a>.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="retention">
+      <h2 id="retention">Data retention</h2>
+      <p>Certain data (such as purchase receipts required by Google Play) may be retained for up to 30 days for legal or billing purposes before being permanently removed.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Acme Inc. All rights reserved.</p>
+    <p><a href="mailto:support@example.com">support@example.com</a></p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
