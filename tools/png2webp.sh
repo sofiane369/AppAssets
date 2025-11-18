@@ -33,16 +33,13 @@ QUALITY="${3:-80}"         # Qualité (par défaut 80 si non précisé)
 # Création du dossier de sortie s’il n’existe pas
 mkdir -p "$OUTPUT_DIR"
 
-# Boucle sur tous les fichiers PNG du dossier d’entrée
-for file in "$INPUT_DIR"/*.png; do
-    if [ -f "$file" ]; then
-        # Récupère le nom du fichier sans l'extension
-        filename=$(basename "$file" .png)
-
-        echo "📷 Conversion de $file -> $OUTPUT_DIR/$filename.webp (qualité: $QUALITY)"
-        # Commande de conversion PNG -> WebP
-        cwebp "$file" -q "$QUALITY" -o "$OUTPUT_DIR/$filename.webp"
-    fi
+# Boucle sur tous les fichiers image du dossier d’entrée
+for file in "$INPUT_DIR"/*.{png,PNG,jpg,JPG,jpeg,JPEG}; do
+    [ -f "$file" ] || continue
+    filename=$(basename "$file")
+    filename="${filename%.*}"
+    echo "📷 Conversion de $file -> $OUTPUT_DIR/$filename.webp (qualité: $QUALITY)"
+    cwebp "$file" -q "$QUALITY" -o "$OUTPUT_DIR/$filename.webp"
 done
 
 echo "✅ Conversion terminée !"
