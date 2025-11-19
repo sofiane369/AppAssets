@@ -1,89 +1,115 @@
 <!doctype html>
-<html lang="en" dir="auto">
+<html lang="ar" dir="rtl">
+
 <head>
-  <title>FAQ — Acme App</title>
-  
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Naskh+Arabic:wght@700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/styles.css" />
+    <title>الأسئلة الشائعة — MeeZen</title>
 
-  <meta name="description" content="Frequently Asked Questions about Acme App. Expand a question to see the answer." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Naskh+Arabic:wght@700&family=Tajawal:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css" />
+
+    <meta name="description" content="الأسئلة الشائعة حول تطبيق MeeZen. اضغط على السؤال لعرض الإجابة." />
 </head>
+
 <body>
-  
-  <main class="container" id="content">
-    <h1 class="page-title">Frequently Asked Questions</h1>
-    <p class="subtle">Find quick answers below. Can’t find what you need? <a href="mailto:support@example.com">Contact support</a>.</p>
 
-    <section aria-labelledby="general">
-      <h2 id="general" class="section">General</h2>
-
-      <details class="accordion">
-        <summary>
-          How do I reset my password?
-          <span class="chev" aria-hidden="true">▾</span>
-        </summary>
-        <div class="accordion-content">
-          <p>Go to Settings → Security → Reset Password, then follow the instructions sent to your email.</p>
+    <header class="header" aria-label="MeeZen header">
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-badge"></span>
+                <span>MeeZen</span>
+            </div>
+            <nav class="nav" aria-label="Language selector">
+                <a href="./faq-en.html">English</a>
+                <a href="./faq.html" aria-current="page">العربية</a>
+            </nav>
         </div>
-      </details>
+    </header>
 
-      <details class="accordion">
-        <summary>
-          Where can I download the latest app version?
-          <span class="chev" aria-hidden="true">▾</span>
-        </summary>
-        <div class="accordion-content">
-          <p>Visit the App Store or Google Play and search for “Acme App”. Updates appear automatically when available.</p>
-        </div>
-      </details>
+    <main class="container" id="content">
+        <h1 class="page-title">الأسئلة الشائعة</h1>
+        <p class="subtle">
+            اعثر على إجابات سريعة أدناه. لم تجد ما تحتاجه؟
+            <a href="mailto:support@meezen.app">تواصل مع الدعم</a>.
+        </p>
 
-      <details class="accordion">
-        <summary>
-          How do I contact support?
-          <span class="chev" aria-hidden="true">▾</span>
-        </summary>
-        <div class="accordion-content">
-          <p>Use the in-app “Help & Support” button or email us at <a href="mailto:support@example.com">support@example.com</a>.</p>
-        </div>
-      </details>
-    </section>
+        <section aria-labelledby="general">
+            <h2 id="general" class="section">عام</h2>
 
-    <section aria-labelledby="billing">
-      <h2 id="billing" class="section">Billing</h2>
+            <details class="accordion">
+                <summary>
+                    أين يمكنني تنزيل أحدث نسخة من التطبيق؟
+                    <span class="chev" aria-hidden="true">▾</span>
+                </summary>
+                <div class="accordion-content">
+                    <p>
+                        قم بزيارة <strong>App Store</strong> أو <strong>Google Play</strong>
+                        ثم ابحث عن “MeeZen”. ستظهر التحديثات تلقائياً عند توفرها.
+                    </p>
+                </div>
+            </details>
 
-      <details class="accordion">
-        <summary>
-          How do subscriptions work?
-          <span class="chev" aria-hidden="true">▾</span>
-        </summary>
-        <div class="accordion-content">
-          <p>Subscriptions renew automatically until canceled in your store account settings. You can manage or cancel anytime.</p>
-        </div>
-      </details>
+            <details class="accordion">
+                <summary>
+                    كيف يمكنني التواصل مع الدعم؟
+                    <span class="chev" aria-hidden="true">▾</span>
+                </summary>
+                <div class="accordion-content">
+                    <p>
+                        يمكنك استخدام زر <strong>المساعدة والدعم</strong> داخل التطبيق
+                        أو مراسلتنا عبر البريد:
+                        <a href="mailto:support@meezen.app">support@meezen.app</a>.
+                    </p>
+                </div>
+            </details>
+        </section>
 
-      <details class="accordion">
-        <summary>
-          Do you offer refunds?
-          <span class="chev" aria-hidden="true">▾</span>
-        </summary>
-        <div class="accordion-content">
-          <p>Refunds are handled according to the App Store or Google Play policies and applicable law.</p>
-        </div>
-      </details>
-    </section>
-  </main>
-  
-<footer class="footer">
-  <p>© <span id="year"></span> Acme Inc. All rights reserved.</p>
-  <p><a href="mailto:support@example.com">support@example.com</a></p>
-</footer>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+        <section aria-labelledby="billing">
+            <h2 id="billing" class="section">الفوترة والاشتراكات</h2>
+
+            <details class="accordion">
+                <summary>
+                    كيف تعمل الاشتراكات؟
+                    <span class="chev" aria-hidden="true">▾</span>
+                </summary>
+                <div class="accordion-content">
+                    <p>
+                        يتم تجديد الاشتراكات تلقائياً ما لم تقم بإلغائها من إعدادات حسابك
+                        في المتجر. يمكنك إدارة الاشتراك أو إلغاؤه في أي وقت من خلال
+                        حسابك في App Store أو Google Play.
+                    </p>
+                </div>
+            </details>
+
+            <details class="accordion">
+                <summary>
+                    هل تقدمون استرداداً (Refunds)؟
+                    <span class="chev" aria-hidden="true">▾</span>
+                </summary>
+                <div class="accordion-content">
+                    <p>
+                        تتم معالجة طلبات الاسترداد وفق سياسات
+                        <strong>App Store</strong> و<strong>Google Play</strong>
+                        والقوانين المعمول بها. يرجى مراجعة حسابك في المتجر لتقديم طلب استرداد.
+                    </p>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> DZS Infinity LLC. All rights reserved.</p>
+        <p><a href="mailto:support@meezen.app">support@meezen.app</a></p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>
