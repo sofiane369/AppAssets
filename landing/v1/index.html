@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>MeeZen</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            overflow-y: auto;
+        }
+
+        /* ✅ image ne dépasse jamais 1080px, centrée */
+        .screen {
+            position: relative;
+            width: min(1080px, 100vw);
+            margin: 0 auto;
+        }
+
+        /* ✅ pas de déformation, ratio respecté */
+        .screen__img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ✅ bouton superposé SUR l'image (et il scroll avec elle) */
+        .cta-img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: calc(clamp(16px, 3.5%, 60px) + env(safe-area-inset-bottom));
+            z-index: 10;
+
+            display: flex;
+            justify-content: center;
+
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ✅ bouton scale avec l'image (864/1080 = 80%) */
+        .cta-img img {
+            width: 80%;
+            max-width: 864px;
+            /* taille originale du bouton */
+            height: auto;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .cta-img:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init rs ls yi ns us ts ss capture Hi calculateEventProperties vs register register_once register_for_session unregister unregister_for_session gs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty fs ds createPersonProfile ps Qr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing hs debug O cs getPageViewId captureTraceFeedback captureTraceMetric Kr".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_ce35rcF0P8IsXBAwIiS70B3oPKNiDZaWcDhhP4Ht1pJ', {
+        api_host: 'https://eu.i.posthog.com',
+        defaults: '2025-11-30',
+        person_profiles: 'always',
+
+        /* ✅ pour n'envoyer QUE ton event */
+        capture_pageview: false,
+        capture_pageleave: false,
+        autocapture: false,
+
+        loaded: function (ph) {
+            // Récupère tous les query params
+            const sp = new URLSearchParams(window.location.search);
+            const props = {};
+
+            // Supporte les clés répétées (?a=1&a=2)
+            for (const [k, v] of sp.entries()) {
+                if (props[k] === undefined) props[k] = v;
+                else if (Array.isArray(props[k])) props[k].push(v);
+                else props[k] = [props[k], v];
+            }
+
+            // Optionnel: info utile
+            props.page_url = window.location.href;
+            props.referrer = document.referrer || "";
+
+            // ✅ event standard PostHog
+            ph.capture('$pageview', props);
+        }
+    })
+</script>
+
+<body>
+    <main class="screen">
+        <img class="screen__img" src="bg.webp" alt="" />
+
+        <!-- Bouton -->
+        <a class="cta-img" id="ctaLink" href="https://go.meezen.app" aria-label="download">
+            <img src="btn.webp" alt="تحميل مجاني">
+        </a>
+
+        <script>
+                (function () {
+                    const link = document.getElementById("ctaLink");
+                    const target = new URL("https://go.meezen.app");     // destination
+                    const current = new URL(window.location.href);       // page actuelle
+
+                    // Copie tous les paramètres de la page actuelle vers la destination
+                    for (const [key, value] of current.searchParams.entries()) {
+                        target.searchParams.set(key, value); // set = remplace si déjà présent
+                    }
+
+                    // Optionnel: si tu veux aussi conserver le hash (#...)
+                    // target.hash = current.hash;
+
+                    link.href = target.toString();
+                })();
+        </script>
+    </main>
+</body>
+
+</html>
