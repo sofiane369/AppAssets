@@ -1,0 +1,49 @@
+{
+  "family": "Noto Sans CJK JP",
+  "assetRevision": "2.004-jis0208-v2",
+  "repertoire": "practical Shift-JIS/JIS X 0208-derived fallback repertoire",
+  "upstream": {
+    "repository": "https://github.com/notofonts/noto-cjk",
+    "commit": "f8d157532fbfaeda587e826d4cd5b21a49186f7c"
+  },
+  "toolchain": {
+    "fonttools": "4.60.1",
+    "brotli": "1.1.0"
+  },
+  "assets": {
+    "regular": {
+      "assetRef": "font:noto-sans-cjk-jp:regular:jis0208:v2",
+      "filename": "regular.woff2",
+      "format": "WOFF2",
+      "byteLength": 3074608,
+      "sha256": "cd96ac218c614e91f524f1ebd5297c3fe5bbe9a008821283e4d969c12bb4e093"
+    },
+    "bold": {
+      "assetRef": "font:noto-sans-cjk-jp:bold:jis0208:v2",
+      "filename": "bold.woff2",
+      "format": "WOFF2",
+      "byteLength": 3216444,
+      "sha256": "6e2d51d6318450a42a851e46eb85980263ec88e43fe266ad7d2142fc86f8775a"
+    }
+  },
+  "coverage": {
+    "requestedCodepoints": 6979,
+    "primaryCoveredRequestedCodepoints": 242,
+    "fallbackRequiredCodepoints": 6737,
+    "fallbackCoveredCodepoints": 6736,
+    "unsupported": [
+      {
+        "codepoint": "U+2252",
+        "character": "≒",
+        "reason": "Not covered by Noto Sans 2.008 primary or the pinned Noto Sans CJK JP source. RETAIL LABELER must return GLYPH_NOT_SUPPORTED."
+      }
+    ],
+    "primaryOnly": [
+      {
+        "codepoint": "U+2079",
+        "character": "⁹",
+        "reason": "Covered by primary Noto Sans 2.008 and therefore does not require CJK fallback."
+      }
+    ]
+  }
+}
