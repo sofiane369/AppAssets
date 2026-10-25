@@ -1,0 +1,14 @@
+{
+  "assetRef": "runtime:pdfkit:pdfkit-0.20.2-s07-00-frozen",
+  "assetRevision": "pdfkit-0.20.2-s07-00-frozen",
+  "filename": "pdfkit.browser.js",
+  "byteLength": 1419252,
+  "sha256": "08f107a466d2377097f3b80a1c2fa55d3cb2048d939a41d3f7d361690ff36713",
+  "contentType": "application/javascript",
+  "license": "MIT",
+  "source": "frozen S07-00 proven runtime",
+  "sourceArtifact": "src/dev/S07PdfkitBundle.html",
+  "dependency": "pdfkit",
+  "dependencyVersion": "0.20.2",
+  "runtimeGlobal": "PDFDocument"
+}
